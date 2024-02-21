@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+p {text-align: center;}
+
+h1{
+  font: size 30px;
+  margin-left:280px;
+}
+.qrcode{
+  display: flex;
+}
+.qr1{
+  display: flex;
+}
+.qr2{
+  display: flex;
+}
+</style>
+<script src="qr-gen.js"></script>
+</head>
+
+<body>
+
+<h1><center>Document</center></h1>
+
+<img width="500" height="400" style="display: block; -webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="data:image/jpeg;base64,<%= imageIpfs %>">
+<br>
+<br>
+
+
+<table class="center" style="width:90%">
+  <tr>
+    <td colspan="4"><center>SAKSHAM DOCUMENT DETAILS</center></td>
+  </tr>
+  <tr>
+    <td width="25%">Document Id</td>
+    <td width="25%"><%= documentId %></td>
+    <td width="25%">Document Class</td>
+    <td width="25%"><%= documentClass %></td>
+   <tr>
+   <tr>
+    <td width="25%">Document Title</td>
+    <td width="25%"><%= documentTitle %></td>
+    <td width="25%">Uploaded On</td>
+    <td width="25%"><%= uploadedOn %></td>
+   <tr>
+    <td width="25%">Document Owner</td>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%">Upload Source </td>
+    <td width="25%"><%= uploadSource %></td>
+   </tr>
+   <tr>
+    <td width="25%">Issued By</td>
+    <td width="25%"><%= issuedBy %></td>
+    <td width="25%">Issued On </td>
+    <td width="25%"><%= issuedOn %></td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>SMART CONTRAL DETAILS</center></td>
+  </tr>
+  <tr>
+    <td width="25%">Bloch chain used</td>
+    <td width="25%">Polygon</td>
+    <td width="25%">STANDARD</td>
+    <td width="25%"><%= standard %></td>
+   <tr>
+   <tr>
+    <td width="25%">Minte</td>
+    <td width="25%"><%= minte %></td>
+    <td width="25%">MINT OWNER</td>
+    <td width="25%"><%= mintOwner %></td>
+   <tr>
+    <td width="25%">NFT Class:</td>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%">TOKEN ID </td>
+    <td width="25%"><%= documentOwner %></td>
+   </tr>
+   <tr>
+    <td width="25%">Contract Id</td>
+    <td width="25%"><%= contractId %></td>
+    <td width="25%">Meta Data View</td>
+    <td width="25%"><%= metaDataView %></td>
+  </tr>
+  <tr>
+    <td width="25%">Verify on Polyscan</td>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%"><%= documentOwner %></td>
+  </tr>
+  <tr>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%"><%= documentOwner %></td>
+    <td width="25%">SCORE</td>
+    <td width="25%"><%= score %></td>
+  </tr>
+  
+</table>
+<div class="qrcode">
+  <div class="qr1">
+    <h1>Scan To Certificate</h1>
+    <img src="<%= qrimg %>" alt="not found" height="100px" width="100px" style="display: block; margin-left:350px;" id="qr-image">
+
+  </div>
+  <br>
+  <br>
+  <div class="qr2">
+    <h1>Scan For Verify</h1>
+    <img src="<%= polygonqrcode %>" alt="not found" height="100px" width="100px" style="display: block; margin-left:350px;" id="qr-image-polygon">
+
+  </div>
+</div>
+<p>The above details are directly Filled from the Polygon Block Chain</p>
+</div>
+
+</body>
+</html>
